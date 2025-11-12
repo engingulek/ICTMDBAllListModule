@@ -12,6 +12,7 @@
 		7D10BBA52EC4F07D0090ED08 /* DependencyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BBA42EC4F07D0090ED08 /* DependencyKit */; };
 		7D10BBA82EC4F0990090ED08 /* ICTMDBViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BBA72EC4F0990090ED08 /* ICTMDBViewKit */; };
 		7D10BBAB2EC4F0AF0090ED08 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BBAA2EC4F0AF0090ED08 /* SnapKit */; };
+		7D10BBC32EC4F3590090ED08 /* ICTMDBModularProtocols in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BBC22EC4F3590090ED08 /* ICTMDBModularProtocols */; };
 		7D3F36B02EC4EF1500EE55FC /* ICTMDBAllListModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F36A62EC4EF1500EE55FC /* ICTMDBAllListModule.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 			files = (
 				7D10BB722EC4EF8E0090ED08 /* GenericCollectionViewKit in Frameworks */,
 				7D10BB752EC4F03C0090ED08 /* ICTMDBNetworkManagerKit in Frameworks */,
+				7D10BBC32EC4F3590090ED08 /* ICTMDBModularProtocols in Frameworks */,
 				7D10BBA52EC4F07D0090ED08 /* DependencyKit in Frameworks */,
 				7D10BBA82EC4F0990090ED08 /* ICTMDBViewKit in Frameworks */,
 				7D10BBAB2EC4F0AF0090ED08 /* SnapKit in Frameworks */,
@@ -121,6 +123,7 @@
 				7D10BBA42EC4F07D0090ED08 /* DependencyKit */,
 				7D10BBA72EC4F0990090ED08 /* ICTMDBViewKit */,
 				7D10BBAA2EC4F0AF0090ED08 /* SnapKit */,
+				7D10BBC22EC4F3590090ED08 /* ICTMDBModularProtocols */,
 			);
 			productName = ICTMDBAllListModule;
 			productReference = 7D3F36A62EC4EF1500EE55FC /* ICTMDBAllListModule.framework */;
@@ -182,6 +185,7 @@
 				7D10BBA32EC4F07D0090ED08 /* XCRemoteSwiftPackageReference "HPDependencyKit" */,
 				7D10BBA62EC4F0990090ED08 /* XCRemoteSwiftPackageReference "ICTMDBViewKit" */,
 				7D10BBA92EC4F0AF0090ED08 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7D10BBC12EC4F3590090ED08 /* XCRemoteSwiftPackageReference "ICTMDBModularProtocols" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 7D3F36A72EC4EF1500EE55FC /* Products */;
@@ -547,6 +551,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		7D10BBC12EC4F3590090ED08 /* XCRemoteSwiftPackageReference "ICTMDBModularProtocols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/engingulek/ICTMDBModularProtocols";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -574,6 +586,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 7D10BBA92EC4F0AF0090ED08 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		7D10BBC22EC4F3590090ED08 /* ICTMDBModularProtocols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D10BBC12EC4F3590090ED08 /* XCRemoteSwiftPackageReference "ICTMDBModularProtocols" */;
+			productName = ICTMDBModularProtocols;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,5 +1,5 @@
 {
-  "originHash" : "9875eefacf904c6c9d8d67faf3e3698ddac5292e9c81ff94a6dee895a60979d2",
+  "originHash" : "e07321fa6f9b7a21f161eaaca7a48dc9dfd4e44414f80e618f1877269be57dea",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -26,6 +26,15 @@
       "state" : {
         "revision" : "c9305c28ff55ad6eb257fbcfd014f49be7d8f47a",
         "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "ictmdbmodularprotocols",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/engingulek/ICTMDBModularProtocols",
+      "state" : {
+        "revision" : "878d1b233f54741b0e787ce273e2a75171255f36",
+        "version" : "0.0.1"
       }
     },
     {
