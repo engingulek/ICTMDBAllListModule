@@ -1,0 +1,87 @@
+{
+  "originHash" : "c83a8787dadd44a766a3458ade7a7a76777143217f375caad662d888e9e5325d",
+  "pins" : [
+    {
+      "identity" : "alamofire",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Alamofire/Alamofire.git",
+      "state" : {
+        "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
+        "version" : "5.10.2"
+      }
+    },
+    {
+      "identity" : "genericcollectionviewkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/engingulek/GenericCollectionViewKit",
+      "state" : {
+        "revision" : "316fcf9e353fa787ec8995948ac71bea46ddf288",
+        "version" : "0.0.2"
+      }
+    },
+    {
+      "identity" : "hpdependencykit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/engingulek/HPDependencyKit",
+      "state" : {
+        "revision" : "c9305c28ff55ad6eb257fbcfd014f49be7d8f47a",
+        "version" : "1.0.0"
+      }
+    },
+    {
+      "identity" : "ictmdbmodularprotocols",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/engingulek/ICTMDBModularProtocols",
+      "state" : {
+        "revision" : "878d1b233f54741b0e787ce273e2a75171255f36",
+        "version" : "0.0.1"
+      }
+    },
+    {
+      "identity" : "ictmdbnetworkmanagerkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/engingulek/ICTMDBNetworkManagerKit",
+      "state" : {
+        "revision" : "1bfc3e242df133d9c74918a27e4bb305d159437a",
+        "version" : "0.0.2"
+      }
+    },
+    {
+      "identity" : "ictmdbviewkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/engingulek/ICTMDBViewKit",
+      "state" : {
+        "revision" : "be3081738b66acd58ebe28de2c62aca91e8afa18",
+        "version" : "0.0.3"
+      }
+    },
+    {
+      "identity" : "kingfisher",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "state" : {
+        "revision" : "4d75de347da985a70c63af4d799ed482021f6733",
+        "version" : "8.6.1"
+      }
+    },
+    {
+      "identity" : "snapkit",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SnapKit/SnapKit.git",
+      "state" : {
+        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
+        "version" : "5.7.1"
+      }
+    },
+    {
+      "identity" : "swinject",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/Swinject/Swinject.git",
+      "state" : {
+        "revision" : "b685b549fe4d8ae265fc7a2f27d0789720425d69",
+        "version" : "2.10.0"
+      }
+    }
+  ],
+  "version" : 3
+}
