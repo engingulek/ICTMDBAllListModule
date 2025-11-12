@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
-internal import GenericCollectionViewKit
-internal import ICTMDBViewKit
-internal import SnapKit
+ import GenericCollectionViewKit
+ import ICTMDBViewKit
+ import SnapKit
 
 final class AllListViewController: UIViewController {
 
@@ -42,8 +42,8 @@ final class AllListViewController: UIViewController {
     private lazy var dataSource: GenericCollectionDataSource<AllListPresenter>? = {
         guard let presenter = presenter as? AllListPresenter else { return nil }
         return GenericCollectionDataSource(source: presenter) { identifier, cell, item in
-            guard let item = item as? String else { return }
-            (cell as? TvShowCell)
+            guard let item = item as? TVShowPresentation else { return }
+            (cell as? TvShowCell)?.configure(with: item)
         }
     }()
 
