@@ -1,0 +1,598 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7D10BB722EC4EF8E0090ED08 /* GenericCollectionViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BB712EC4EF8E0090ED08 /* GenericCollectionViewKit */; };
+		7D10BB752EC4F03C0090ED08 /* ICTMDBNetworkManagerKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BB742EC4F03C0090ED08 /* ICTMDBNetworkManagerKit */; };
+		7D10BBA52EC4F07D0090ED08 /* DependencyKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BBA42EC4F07D0090ED08 /* DependencyKit */; };
+		7D10BBA82EC4F0990090ED08 /* ICTMDBViewKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BBA72EC4F0990090ED08 /* ICTMDBViewKit */; };
+		7D10BBAB2EC4F0AF0090ED08 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BBAA2EC4F0AF0090ED08 /* SnapKit */; };
+		7D10BBC32EC4F3590090ED08 /* ICTMDBModularProtocols in Frameworks */ = {isa = PBXBuildFile; productRef = 7D10BBC22EC4F3590090ED08 /* ICTMDBModularProtocols */; };
+		7D3F36B02EC4EF1500EE55FC /* ICTMDBAllListModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3F36A62EC4EF1500EE55FC /* ICTMDBAllListModule.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		7D3F36B12EC4EF1500EE55FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7D3F369D2EC4EF1500EE55FC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7D3F36A52EC4EF1500EE55FC;
+			remoteInfo = ICTMDBAllListModule;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		7D3F36A62EC4EF1500EE55FC /* ICTMDBAllListModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ICTMDBAllListModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7D3F36AF2EC4EF1500EE55FC /* ICTMDBAllListModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ICTMDBAllListModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		7D3F36A82EC4EF1500EE55FC /* ICTMDBAllListModule */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ICTMDBAllListModule;
+			sourceTree = "<group>";
+		};
+		7D3F36B32EC4EF1500EE55FC /* ICTMDBAllListModuleTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = ICTMDBAllListModuleTests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7D3F36A32EC4EF1500EE55FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D10BB722EC4EF8E0090ED08 /* GenericCollectionViewKit in Frameworks */,
+				7D10BB752EC4F03C0090ED08 /* ICTMDBNetworkManagerKit in Frameworks */,
+				7D10BBC32EC4F3590090ED08 /* ICTMDBModularProtocols in Frameworks */,
+				7D10BBA52EC4F07D0090ED08 /* DependencyKit in Frameworks */,
+				7D10BBA82EC4F0990090ED08 /* ICTMDBViewKit in Frameworks */,
+				7D10BBAB2EC4F0AF0090ED08 /* SnapKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D3F36AC2EC4EF1500EE55FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7D3F36B02EC4EF1500EE55FC /* ICTMDBAllListModule.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7D3F369C2EC4EF1500EE55FC = {
+			isa = PBXGroup;
+			children = (
+				7D3F36A82EC4EF1500EE55FC /* ICTMDBAllListModule */,
+				7D3F36B32EC4EF1500EE55FC /* ICTMDBAllListModuleTests */,
+				7D3F36A72EC4EF1500EE55FC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7D3F36A72EC4EF1500EE55FC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7D3F36A62EC4EF1500EE55FC /* ICTMDBAllListModule.framework */,
+				7D3F36AF2EC4EF1500EE55FC /* ICTMDBAllListModuleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7D3F36A12EC4EF1500EE55FC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		7D3F36A52EC4EF1500EE55FC /* ICTMDBAllListModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D3F36B82EC4EF1500EE55FC /* Build configuration list for PBXNativeTarget "ICTMDBAllListModule" */;
+			buildPhases = (
+				7D3F36A12EC4EF1500EE55FC /* Headers */,
+				7D3F36A22EC4EF1500EE55FC /* Sources */,
+				7D3F36A32EC4EF1500EE55FC /* Frameworks */,
+				7D3F36A42EC4EF1500EE55FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				7D3F36A82EC4EF1500EE55FC /* ICTMDBAllListModule */,
+			);
+			name = ICTMDBAllListModule;
+			packageProductDependencies = (
+				7D10BB712EC4EF8E0090ED08 /* GenericCollectionViewKit */,
+				7D10BB742EC4F03C0090ED08 /* ICTMDBNetworkManagerKit */,
+				7D10BBA42EC4F07D0090ED08 /* DependencyKit */,
+				7D10BBA72EC4F0990090ED08 /* ICTMDBViewKit */,
+				7D10BBAA2EC4F0AF0090ED08 /* SnapKit */,
+				7D10BBC22EC4F3590090ED08 /* ICTMDBModularProtocols */,
+			);
+			productName = ICTMDBAllListModule;
+			productReference = 7D3F36A62EC4EF1500EE55FC /* ICTMDBAllListModule.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7D3F36AE2EC4EF1500EE55FC /* ICTMDBAllListModuleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7D3F36BB2EC4EF1500EE55FC /* Build configuration list for PBXNativeTarget "ICTMDBAllListModuleTests" */;
+			buildPhases = (
+				7D3F36AB2EC4EF1500EE55FC /* Sources */,
+				7D3F36AC2EC4EF1500EE55FC /* Frameworks */,
+				7D3F36AD2EC4EF1500EE55FC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				7D3F36B22EC4EF1500EE55FC /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				7D3F36B32EC4EF1500EE55FC /* ICTMDBAllListModuleTests */,
+			);
+			name = ICTMDBAllListModuleTests;
+			packageProductDependencies = (
+			);
+			productName = ICTMDBAllListModuleTests;
+			productReference = 7D3F36AF2EC4EF1500EE55FC /* ICTMDBAllListModuleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7D3F369D2EC4EF1500EE55FC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2600;
+				LastUpgradeCheck = 2600;
+				TargetAttributes = {
+					7D3F36A52EC4EF1500EE55FC = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					7D3F36AE2EC4EF1500EE55FC = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+				};
+			};
+			buildConfigurationList = 7D3F36A02EC4EF1500EE55FC /* Build configuration list for PBXProject "ICTMDBAllListModule" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 7D3F369C2EC4EF1500EE55FC;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				7D10BB702EC4EF8E0090ED08 /* XCRemoteSwiftPackageReference "GenericCollectionViewKit" */,
+				7D10BB732EC4F03C0090ED08 /* XCRemoteSwiftPackageReference "ICTMDBNetworkManagerKit" */,
+				7D10BBA32EC4F07D0090ED08 /* XCRemoteSwiftPackageReference "HPDependencyKit" */,
+				7D10BBA62EC4F0990090ED08 /* XCRemoteSwiftPackageReference "ICTMDBViewKit" */,
+				7D10BBA92EC4F0AF0090ED08 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7D10BBC12EC4F3590090ED08 /* XCRemoteSwiftPackageReference "ICTMDBModularProtocols" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 7D3F36A72EC4EF1500EE55FC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7D3F36A52EC4EF1500EE55FC /* ICTMDBAllListModule */,
+				7D3F36AE2EC4EF1500EE55FC /* ICTMDBAllListModuleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7D3F36A42EC4EF1500EE55FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D3F36AD2EC4EF1500EE55FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7D3F36A22EC4EF1500EE55FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D3F36AB2EC4EF1500EE55FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		7D3F36B22EC4EF1500EE55FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7D3F36A52EC4EF1500EE55FC /* ICTMDBAllListModule */;
+			targetProxy = 7D3F36B12EC4EF1500EE55FC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		7D3F36B62EC4EF1500EE55FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 45DX68AP4J;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7D3F36B72EC4EF1500EE55FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 45DX68AP4J;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		7D3F36B92EC4EF1500EE55FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45DX68AP4J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = engingulek.ICTMDBAllListModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D3F36BA2EC4EF1500EE55FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45DX68AP4J;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = engingulek.ICTMDBAllListModule;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_MODULE = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7D3F36BC2EC4EF1500EE55FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45DX68AP4J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = engingulek.ICTMDBAllListModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7D3F36BD2EC4EF1500EE55FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 45DX68AP4J;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = engingulek.ICTMDBAllListModuleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7D3F36A02EC4EF1500EE55FC /* Build configuration list for PBXProject "ICTMDBAllListModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D3F36B62EC4EF1500EE55FC /* Debug */,
+				7D3F36B72EC4EF1500EE55FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D3F36B82EC4EF1500EE55FC /* Build configuration list for PBXNativeTarget "ICTMDBAllListModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D3F36B92EC4EF1500EE55FC /* Debug */,
+				7D3F36BA2EC4EF1500EE55FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7D3F36BB2EC4EF1500EE55FC /* Build configuration list for PBXNativeTarget "ICTMDBAllListModuleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7D3F36BC2EC4EF1500EE55FC /* Debug */,
+				7D3F36BD2EC4EF1500EE55FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7D10BB702EC4EF8E0090ED08 /* XCRemoteSwiftPackageReference "GenericCollectionViewKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/engingulek/GenericCollectionViewKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
+		7D10BB732EC4F03C0090ED08 /* XCRemoteSwiftPackageReference "ICTMDBNetworkManagerKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/engingulek/ICTMDBNetworkManagerKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
+		7D10BBA32EC4F07D0090ED08 /* XCRemoteSwiftPackageReference "HPDependencyKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/engingulek/HPDependencyKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		7D10BBA62EC4F0990090ED08 /* XCRemoteSwiftPackageReference "ICTMDBViewKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/engingulek/ICTMDBViewKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.2;
+			};
+		};
+		7D10BBA92EC4F0AF0090ED08 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		7D10BBC12EC4F3590090ED08 /* XCRemoteSwiftPackageReference "ICTMDBModularProtocols" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/engingulek/ICTMDBModularProtocols";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7D10BB712EC4EF8E0090ED08 /* GenericCollectionViewKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D10BB702EC4EF8E0090ED08 /* XCRemoteSwiftPackageReference "GenericCollectionViewKit" */;
+			productName = GenericCollectionViewKit;
+		};
+		7D10BB742EC4F03C0090ED08 /* ICTMDBNetworkManagerKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D10BB732EC4F03C0090ED08 /* XCRemoteSwiftPackageReference "ICTMDBNetworkManagerKit" */;
+			productName = ICTMDBNetworkManagerKit;
+		};
+		7D10BBA42EC4F07D0090ED08 /* DependencyKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D10BBA32EC4F07D0090ED08 /* XCRemoteSwiftPackageReference "HPDependencyKit" */;
+			productName = DependencyKit;
+		};
+		7D10BBA72EC4F0990090ED08 /* ICTMDBViewKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D10BBA62EC4F0990090ED08 /* XCRemoteSwiftPackageReference "ICTMDBViewKit" */;
+			productName = ICTMDBViewKit;
+		};
+		7D10BBAA2EC4F0AF0090ED08 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D10BBA92EC4F0AF0090ED08 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7D10BBC22EC4F3590090ED08 /* ICTMDBModularProtocols */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7D10BBC12EC4F3590090ED08 /* XCRemoteSwiftPackageReference "ICTMDBModularProtocols" */;
+			productName = ICTMDBModularProtocols;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 7D3F369D2EC4EF1500EE55FC /* Project object */;
+}
