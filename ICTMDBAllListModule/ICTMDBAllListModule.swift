@@ -19,7 +19,7 @@ public class ICTMDBAllListModule : @preconcurrency AllListModuleProtocol {
     @MainActor public func createAllListModule(type: AllListType) -> UIViewController {
         let viewController = AllListViewController()
         let router = AllListRouter()
-        let interactor = AllListInteractor()
+        let interactor = AllListInteractor(network: NetworkManager())
         
         let presenter : any ViewToPresenterAllListProtocol & InteractorToPresenterAllListProtocol
         = AllListPresenter(view: viewController, interactor: interactor, router: router)
@@ -32,10 +32,10 @@ public class ICTMDBAllListModule : @preconcurrency AllListModuleProtocol {
     
     
     
-    static func mockCreateAllListModule() -> UIViewController {
+    @MainActor static func mockCreateAllListModule() -> UIViewController {
         let viewController = AllListViewController()
         let router = AllListRouter()
-        let interactor = AllListInteractor()
+        let interactor = AllListInteractor(network: NetworkManager())
         
         let presenter : any ViewToPresenterAllListProtocol & InteractorToPresenterAllListProtocol
         = AllListPresenter(view: viewController, interactor: interactor, router: router)

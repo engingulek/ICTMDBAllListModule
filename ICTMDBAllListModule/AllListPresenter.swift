@@ -4,9 +4,8 @@
 //
 //  Created by Engin Gülek on 12.11.2025.
 //
-
-internal import GenericCollectionViewKit
-internal import ICTMDBViewKit
+ import GenericCollectionViewKit
+ import ICTMDBViewKit
 import Foundation
 
 enum SectionType: Int, CaseIterable {
@@ -14,11 +13,15 @@ enum SectionType: Int, CaseIterable {
 }
 
 final class AllListPresenter {
-    typealias CellItem = String
+    typealias CellItem = TVShowPresentation
     
     weak var view:PresenterToViewAllListProtocol?
     private var interactor : PresenterToInteractorAllListProtocol
     private var router : PresenterToRouterAllListProtocol
+    private var currentPage:Int = 1
+    private var totalPage:Int = 1
+    private var listtype:ListType? = nil
+    private var tvShows : [TVShowPresentation] = []
     
     init(view: PresenterToViewAllListProtocol?,
          interactor:PresenterToInteractorAllListProtocol,
@@ -39,7 +42,8 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
     }
     
     func getAllList(at type: ListType) {
-      
+        listtype = type
+        interactor.loadTvShows(type: type, page: currentPage)
       
     }
     
@@ -47,7 +51,7 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
         guard let sectionType = SectionType(rawValue: section) else {return 0}
         switch sectionType {
         case .tvShow:
-            return 5
+            return tvShows.count
         }
     }
     
@@ -55,24 +59,31 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
         SectionType.allCases.count
     }
     
-    func cellForItem(section: Int, item: Int) -> String {
-       return ""
+    func cellForItem(section: Int, item: Int) -> TVShowPresentation {
+        let tvShow = tvShows[item]
+        return tvShow
     }
     
      func cellIdentifier(at section: Int) -> String {
-         guard let section  = SectionType(rawValue: section) else {return ""}
-         switch section {
-         case .tvShow:
-             return  TvShowCell.identifier
-         }
+        guard let section  = SectionType(rawValue: section) else {return ""}
+        switch section {
+        case .tvShow:
+            return  TvShowCell.identifier
+        }
     }
-    
     func didSelectItem(section: Int, item: Int) {
-        
+        guard let section  = SectionType(rawValue: section) else {return}
+        switch section {
+        case .tvShow:
+            let id = tvShows[item].id
+            router.toDetail(view: view, id: id)
+        }
     }
-
     
-    func layout(for sectionIndex: Int) -> GenericCollectionViewKit.LayoutSource {
+   
+    
+    func layout(for sectionIndex: Int) -> LayoutSource {
+        
         guard let sectionType = SectionType(rawValue: sectionIndex) else {
             return LayoutSourceTeamplate.none.template
         }
@@ -80,7 +91,6 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
         case .tvShow:
             return LayoutSourceTeamplate.verticalTwoPerRow.template
         }
-     
     }
     
     func titleForSection(at section: Int) -> (
@@ -96,28 +106,56 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
             switch sectionType {
             case .tvShow:
                 item = (
-                    title:"\(LocalizableUI.tvShowCount.localized) ",
+                    title:"\(LocalizableUI.tvShowCount.localized) \(tvShows.count)",
                     sizeType:.medium,buttonType:[])
             }
             return item
         }
     
     func scrollViewDidScroll(endOfPage: Bool) {
-       
+        guard let listtype = listtype else {return}
+        if endOfPage {
+            if currentPage <= totalPage {
+                currentPage += 1
+                interactor.loadTvShows(type: listtype , page: currentPage)
+                view?.relaodCollectionView()
+            }
+        }
         
     }
 }
 
 //MARK: AllListPresenter : InteractorToPresenterAllListProtocol
 extension AllListPresenter : @preconcurrency InteractorToPresenterAllListProtocol {
-   
-    func sendData() {
- 
+    @MainActor
+    func sendData(_ data: DataResult<TvShow>) {
+      
+            
+        view?.startLoading()
+            self.totalPage = data.totalPages
+            self.tvShows.append(contentsOf: data.results.map {
+                TVShowPresentation(tvShow: $0)
+            }.sorted {
+                self.listtype == .popular ? $0.rating > $1.rating : true
+            })
+       
+       
+        view?.finishLoading()
+        view?.prepareCollectionView()
+        view?.relaodCollectionView()
+        
     }
 
-  
+    @MainActor
     func sendError() {
-
+        
+            
+        view?.startLoading()
+           tvShows = []
+        view?.relaodCollectionView()
+        view?.sendErrorState(state: (isHidden: true, message: LocalizableUI.somethingWentWrong.localized))
+        view?.finishLoading()
+        
     }
 
 }

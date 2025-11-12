@@ -7,13 +7,9 @@
 
 
 typealias Ables = UIViewAble & SegueAble
-internal import ICTMDBViewKit
-internal import GenericCollectionViewKit
+ import ICTMDBViewKit
+ import GenericCollectionViewKit
 
-enum ListType {
-    case popular
-    case airingToday
-}
 
 
 protocol ViewToPresenterAllListProtocol: AnyObject,
@@ -45,7 +41,7 @@ protocol PresenterToInteractorAllListProtocol {
 
 
 protocol InteractorToPresenterAllListProtocol {
-    func sendData()
+    func sendData(_ data:DataResult<TvShow> )
     func sendError()
 }
 
