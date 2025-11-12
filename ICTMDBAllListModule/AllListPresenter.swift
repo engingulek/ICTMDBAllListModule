@@ -39,6 +39,7 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
     
     func viewDidLoad() {
         view?.setBackColorAble(color: "backColor")
+        view?.setNavigationTitle(title: "All List")
     }
     
     func getAllList(at type: ListType) {

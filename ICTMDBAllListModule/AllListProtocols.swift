@@ -6,7 +6,7 @@
 //
 
 
-typealias Ables = UIViewAble & SegueAble
+typealias Ables = UIViewAble & SegueAble & NavConUIAble
  import ICTMDBViewKit
  import GenericCollectionViewKit
 

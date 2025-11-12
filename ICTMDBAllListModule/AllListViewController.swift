@@ -125,7 +125,7 @@ extension AllListViewController: @preconcurrency PresenterToViewAllListProtocol 
 
 #Preview {
   
-    ICTMDBAllListModule.mockCreateAllListModule()
+    UINavigationController(rootViewController: ICTMDBAllListModule.mockCreateAllListModule())
 }
 
 
