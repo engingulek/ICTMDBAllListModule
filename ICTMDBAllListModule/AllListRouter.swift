@@ -9,9 +9,13 @@
 import UIKit
  import ICTMDBModularProtocols
 import DependencyKit
+import ICTMDBViewKit
 
 class AllListRouter : PresenterToRouterAllListProtocol{
     func toDetail(view: PresenterToViewAllListProtocol?, id: Int?) {
-      
+        let detailModule =  DependencyRegister.shared.resolve(TvShowDetailProtocol.self)
+        let controller = detailModule.createTvShowDetailModule(id: id)
+        view?.pushViewControllerAble(controller, animated: true)
+
     }
 }
