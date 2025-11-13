@@ -4,7 +4,7 @@ This module is designed for the <a href="https://github.com/engingulek/ICTMDBApp
 It is prepared specifically for the All List Page.
 
 
-### There are 5 Kits
+### There are 4 Kits
 <ul>
   <li>
     <a href="https://github.com/engingulek/ICTMDBViewKit">ICTMDBViewKit</a>
