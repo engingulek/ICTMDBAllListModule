@@ -40,7 +40,7 @@ protocol PresenterToInteractorAllListProtocol {
 }
 
 
-protocol InteractorToPresenterAllListProtocol {
+protocol InteractorToPresenterAllListProtocol : AnyObject{
     func sendData(_ data:DataResult<TvShow> )
     func sendError()
 }
