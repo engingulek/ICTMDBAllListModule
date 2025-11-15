@@ -9,7 +9,8 @@ import Foundation
 
 
 final class AllListInteractor : @preconcurrency PresenterToInteractorAllListProtocol {
-    var presenter: (any InteractorToPresenterAllListProtocol)?
+    weak var presenter: (any InteractorToPresenterAllListProtocol)?
+
 
     private let network : NetworkManagerProtocol
     init(network: NetworkManagerProtocol) {
