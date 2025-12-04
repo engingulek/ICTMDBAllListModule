@@ -31,10 +31,16 @@ final class AllListPresenter {
         self.interactor = interactor
         self.router = router
     }
+    @MainActor
+    private func fetchTvShows(at type: ListType) {
+        Task {@MainActor in
+            await interactor.loadTvShows(type: type, page: currentPage)
+        }
+    }
 }
 
 //MARK: AllListPresenter : ViewToPresenterAllListProtocol
-extension AllListPresenter : ViewToPresenterAllListProtocol {
+extension AllListPresenter : @MainActor ViewToPresenterAllListProtocol {
  
     
     func viewDidLoad() {
@@ -44,9 +50,13 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
     
     func getAllList(at type: ListType) {
         listtype = type
-        interactor.loadTvShows(type: type, page: currentPage)
-      
+        fetchTvShows(at: type)
+        
     }
+    
+    
+    
+    
     
     func numberOfRowsInSection(in section: Int) -> Int {
         guard let sectionType = SectionType(rawValue: section) else {return 0}
@@ -113,12 +123,14 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
             return item
         }
     
-    func scrollViewDidScroll(endOfPage: Bool) {
+    @MainActor func scrollViewDidScroll(endOfPage: Bool) {
         guard let listtype = listtype else {return}
         if endOfPage {
             if currentPage <= totalPage {
                 currentPage += 1
-                interactor.loadTvShows(type: listtype , page: currentPage)
+                
+                fetchTvShows(at: listtype)
+                
                 view?.relaodCollectionView()
             }
         }
@@ -127,7 +139,7 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
 }
 
 //MARK: AllListPresenter : InteractorToPresenterAllListProtocol
-extension AllListPresenter : @preconcurrency InteractorToPresenterAllListProtocol {
+extension AllListPresenter : @MainActor InteractorToPresenterAllListProtocol {
     @MainActor
     func sendData(_ data: DataResult<TvShow>) {
       

@@ -12,7 +12,7 @@ import UIKit
  import ICTMDBNetworkManagerKit
 
 
-public class ICTMDBAllListModule : @preconcurrency AllListModuleProtocol {
+public class ICTMDBAllListModule :  @MainActor AllListModuleProtocol {
  
     public init() { }
     

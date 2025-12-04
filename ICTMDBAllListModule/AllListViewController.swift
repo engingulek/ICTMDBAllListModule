@@ -95,7 +95,7 @@ final class AllListViewController: UIViewController {
 }
 
 // MARK: - PresenterToViewAllListProtocol
-extension AllListViewController: @preconcurrency PresenterToViewAllListProtocol {
+extension AllListViewController:  @MainActor PresenterToViewAllListProtocol {
 
     func prepareCollectionView() {
 
