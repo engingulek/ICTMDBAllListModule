@@ -8,7 +8,8 @@
 import Foundation
 
 
-final class AllListInteractor : @preconcurrency PresenterToInteractorAllListProtocol {
+final class AllListInteractor : PresenterToInteractorAllListProtocol {
+   
     weak var presenter: (any InteractorToPresenterAllListProtocol)?
 
 
@@ -18,7 +19,23 @@ final class AllListInteractor : @preconcurrency PresenterToInteractorAllListProt
         self.network = network
     }
     let deviceLanguageCode = Locale.current.language.languageCode ?? .english
-    @MainActor func loadTvShows(type:ListType,page:Int) {
+    
+    func loadTvShows(type: ListType, page: Int) async {
+        let request = TvShowRequest(
+            language: deviceLanguageCode == .turkish ? .tr : .en,
+            page: page,
+            allListType: type)
+        
+        
+        do {
+            let result = try await network.execute(request)
+            presenter?.sendData(result)
+        }catch{
+            presenter?.sendError()
+        }
+    }
+    
+    /*@MainActor func loadTvShows(type:ListType,page:Int) {
         let request = TvShowRequest(
             language: deviceLanguageCode == .turkish ? .tr : .en,
             page: page,
@@ -32,7 +49,7 @@ final class AllListInteractor : @preconcurrency PresenterToInteractorAllListProt
                 presenter?.sendError()
             }
         }
-    }
+    }*/
     
 }
 
