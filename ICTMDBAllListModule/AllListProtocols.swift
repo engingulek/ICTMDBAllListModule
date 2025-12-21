@@ -11,7 +11,7 @@ typealias Ables = UIViewAble & SegueAble & NavConUIAble
  import GenericCollectionViewKit
 
 
-@MainActor
+
 protocol ViewToPresenterAllListProtocol: AnyObject,
     GenericCollectionDataSourceProtocol,
     GenericCollectionDelegateSourceProtocol,
@@ -32,14 +32,14 @@ protocol PresenterToViewAllListProtocol : AnyObject,Ables{
    
 }
 
-@MainActor
-protocol PresenterToInteractorAllListProtocol {
+
+protocol PresenterToInteractorAllListProtocol : Sendable,AnyObject {
     var presenter: InteractorToPresenterAllListProtocol? {get set}
     func loadTvShows(type:ListType,page:Int) async
 
 }
 
-
+@MainActor
 protocol InteractorToPresenterAllListProtocol : AnyObject{
     func sendData(_ data:DataResult<TvShow> )
     func sendError()
