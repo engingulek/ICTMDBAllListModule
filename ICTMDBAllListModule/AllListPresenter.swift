@@ -31,6 +31,7 @@ final class AllListPresenter {
         self.interactor = interactor
         self.router = router
     }
+    
     @MainActor
     private func fetchTvShows(at type: ListType) {
         Task {@MainActor in
@@ -48,15 +49,11 @@ extension AllListPresenter : @MainActor ViewToPresenterAllListProtocol {
         view?.setNavigationTitle(title: "All List")
     }
     
-    func getAllList(at type: ListType) {
+    @MainActor func getAllList(at type: ListType) {
         listtype = type
         fetchTvShows(at: type)
         
     }
-    
-    
-    
-    
     
     func numberOfRowsInSection(in section: Int) -> Int {
         guard let sectionType = SectionType(rawValue: section) else {return 0}
@@ -139,8 +136,8 @@ extension AllListPresenter : @MainActor ViewToPresenterAllListProtocol {
 }
 
 //MARK: AllListPresenter : InteractorToPresenterAllListProtocol
-extension AllListPresenter : @MainActor InteractorToPresenterAllListProtocol {
-    @MainActor
+extension AllListPresenter : InteractorToPresenterAllListProtocol {
+
     func sendData(_ data: DataResult<TvShow>) {
       
             
@@ -159,7 +156,7 @@ extension AllListPresenter : @MainActor InteractorToPresenterAllListProtocol {
         
     }
 
-    @MainActor
+   
     func sendError() {
         
             
