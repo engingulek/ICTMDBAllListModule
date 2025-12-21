@@ -1,13 +1,13 @@
 {
-  "originHash" : "c83a8787dadd44a766a3458ade7a7a76777143217f375caad662d888e9e5325d",
+  "originHash" : "6ce3125a9a013f18071d3b8b40d6e1e853d53b70047eb35b03466045801907f9",
   "pins" : [
     {
       "identity" : "alamofire",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/Alamofire/Alamofire.git",
       "state" : {
-        "revision" : "513364f870f6bfc468f9d2ff0a95caccc10044c5",
-        "version" : "5.10.2"
+        "revision" : "7be73f6c2b5cd90e40798b06ebd5da8f9f79cf88",
+        "version" : "5.11.0"
       }
     },
     {
@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/engingulek/GenericCollectionViewKit",
       "state" : {
-        "revision" : "27f7bb8dd028eae2a4680a00638f8f6e231e0a2c",
-        "version" : "0.0.3"
+        "revision" : "a41d0a2baf33d22100708590eea147a6a3f7464d",
+        "version" : "0.0.7"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/engingulek/ICTMDBViewKit",
       "state" : {
-        "revision" : "be3081738b66acd58ebe28de2c62aca91e8afa18",
-        "version" : "0.0.3"
+        "revision" : "cb7d4f70a03495e409ff5ff76bb8141d737d7416",
+        "version" : "0.1.0"
       }
     },
     {

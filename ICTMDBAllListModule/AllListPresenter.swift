@@ -42,8 +42,7 @@ final class AllListPresenter {
 
 //MARK: AllListPresenter : ViewToPresenterAllListProtocol
 extension AllListPresenter : @MainActor ViewToPresenterAllListProtocol {
- 
-    
+   
     func viewDidLoad() {
         view?.setBackColorAble(color: "backColor")
         view?.setNavigationTitle(title: "All List")
@@ -101,24 +100,21 @@ extension AllListPresenter : @MainActor ViewToPresenterAllListProtocol {
         }
     }
     
-    func titleForSection(at section: Int) -> (
-        title: String, sizeType:SectionSizeType,
-        buttonType: [TitleForSectionButtonType]?) {
-            guard let sectionType = SectionType(rawValue: section)
-            else { return  (title:"",sizeType:.small,buttonType:[]) }
-            
-            var item : (
-                title: String,
-                sizeType: SectionSizeType,buttonType: [TitleForSectionButtonType]?)
-            
-            switch sectionType {
-            case .tvShow:
-                item = (
-                    title:"\(LocalizableUI.tvShowCount.localized) \(tvShows.count)",
-                    sizeType:.medium,buttonType:[])
-            }
-            return item
+    func titleForSection(at section: Int) -> GenericCollectionViewKit.HeaderViewItem {
+        var headerViewItem:HeaderViewItem
+        guard let sectionType = SectionType(rawValue: section)
+        else { return .init(title: "", sizeType: .empty) }
+        switch sectionType {
+        case .tvShow:
+            headerViewItem = .init(
+                title: "\(LocalizableUI.tvShowCount.localized) \(tvShows.count)",
+                sizeType: .medium)
         }
+        return headerViewItem
+    }
+    
+ 
+    
     
     @MainActor func scrollViewDidScroll(endOfPage: Bool) {
         guard let listtype = listtype else {return}
