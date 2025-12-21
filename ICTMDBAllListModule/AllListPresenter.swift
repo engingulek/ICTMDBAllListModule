@@ -31,10 +31,17 @@ final class AllListPresenter {
         self.interactor = interactor
         self.router = router
     }
+    
+    @MainActor
+    private func fetchTvShows(at type: ListType) {
+        Task {@MainActor in
+            await interactor.loadTvShows(type: type, page: currentPage)
+        }
+    }
 }
 
 //MARK: AllListPresenter : ViewToPresenterAllListProtocol
-extension AllListPresenter : ViewToPresenterAllListProtocol {
+extension AllListPresenter : @MainActor ViewToPresenterAllListProtocol {
  
     
     func viewDidLoad() {
@@ -42,10 +49,10 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
         view?.setNavigationTitle(title: "All List")
     }
     
-    func getAllList(at type: ListType) {
+    @MainActor func getAllList(at type: ListType) {
         listtype = type
-        interactor.loadTvShows(type: type, page: currentPage)
-      
+        fetchTvShows(at: type)
+        
     }
     
     func numberOfRowsInSection(in section: Int) -> Int {
@@ -113,12 +120,14 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
             return item
         }
     
-    func scrollViewDidScroll(endOfPage: Bool) {
+    @MainActor func scrollViewDidScroll(endOfPage: Bool) {
         guard let listtype = listtype else {return}
         if endOfPage {
             if currentPage <= totalPage {
                 currentPage += 1
-                interactor.loadTvShows(type: listtype , page: currentPage)
+                
+                fetchTvShows(at: listtype)
+                
                 view?.relaodCollectionView()
             }
         }
@@ -127,8 +136,8 @@ extension AllListPresenter : ViewToPresenterAllListProtocol {
 }
 
 //MARK: AllListPresenter : InteractorToPresenterAllListProtocol
-extension AllListPresenter : @preconcurrency InteractorToPresenterAllListProtocol {
-    @MainActor
+extension AllListPresenter : InteractorToPresenterAllListProtocol {
+
     func sendData(_ data: DataResult<TvShow>) {
       
             
@@ -147,7 +156,7 @@ extension AllListPresenter : @preconcurrency InteractorToPresenterAllListProtoco
         
     }
 
-    @MainActor
+   
     func sendError() {
         
             

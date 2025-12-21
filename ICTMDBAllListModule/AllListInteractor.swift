@@ -8,31 +8,30 @@
 import Foundation
 
 
-final class AllListInteractor : @preconcurrency PresenterToInteractorAllListProtocol {
+final class AllListInteractor : PresenterToInteractorAllListProtocol,@unchecked Sendable {
+   
     weak var presenter: (any InteractorToPresenterAllListProtocol)?
-
-
     private let network : NetworkManagerProtocol
     init(network: NetworkManagerProtocol) {
        
         self.network = network
     }
+    
     let deviceLanguageCode = Locale.current.language.languageCode ?? .english
-    @MainActor func loadTvShows(type:ListType,page:Int) {
+    
+    func loadTvShows(type: ListType, page: Int) async {
         let request = TvShowRequest(
             language: deviceLanguageCode == .turkish ? .tr : .en,
             page: page,
             allListType: type)
-        network.execute(request) {[weak self] result in
-            guard let self else {return}
-            switch result {
-            case .success(let result):
-                presenter?.sendData(result)
-            case .failure:
-                presenter?.sendError()
-            }
+        
+        
+        do {
+            let result = try await network.execute(request)
+           await presenter?.sendData(result)
+        }catch{
+           await presenter?.sendError()
         }
     }
-    
 }
 

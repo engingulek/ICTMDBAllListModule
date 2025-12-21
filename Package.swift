@@ -5,7 +5,7 @@ let package = Package(
     name: "ICTMDBAllListModule",
     defaultLocalization: "en",
     platforms: [
-        .iOS(.v18)
+        .iOS(.v26)
     ],
     products: [
         .library(
