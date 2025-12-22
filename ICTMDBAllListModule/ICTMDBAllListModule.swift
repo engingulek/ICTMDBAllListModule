@@ -6,43 +6,21 @@
 //
 
 import Foundation
+import SwiftUI
 
-import UIKit
- import ICTMDBModularProtocols
- import ICTMDBNetworkManagerKit
+import ICTMDBNetworkManagerKit
 
 
-public class ICTMDBAllListModule :  @MainActor AllListModuleProtocol {
+public class ICTMDBAllListModule  {
  
     public init() { }
     
-    @MainActor public func createAllListModule(type: AllListType) -> UIViewController {
-        let viewController = AllListViewController()
-        let router = AllListRouter()
-        let interactor = AllListInteractor(network: NetworkManager())
-        
-        let presenter : any ViewToPresenterAllListProtocol & InteractorToPresenterAllListProtocol
-        = AllListPresenter(view: viewController, interactor: interactor, router: router)
-        viewController.presenter = presenter
-        interactor.presenter = presenter
-        let listType:ListType = type == .popular ? .popular : .airingToday
-        presenter.getAllList(at: listType)
-        return viewController
+    @MainActor static func createModule(type:ListType) -> AnyView  {
+        let viewModel = AllListViewModel(service: AllListService(networkManager: NetworkManager()))
+        viewModel.loadData(type: type)
+        let view = AllListScreen(viewModel: viewModel)
+        return AnyView(view)
     }
     
-    
-    
-    @MainActor static func mockCreateAllListModule() -> UIViewController {
-        let viewController = AllListViewController()
-        let router = AllListRouter()
-        let interactor = AllListInteractor(network: NetworkManager())
-        
-        let presenter : any ViewToPresenterAllListProtocol & InteractorToPresenterAllListProtocol
-        = AllListPresenter(view: viewController, interactor: interactor, router: router)
-        viewController.presenter = presenter
-        interactor.presenter = presenter
-     
-        presenter.getAllList(at: .popular)
-        return viewController
-    }
+  
 }

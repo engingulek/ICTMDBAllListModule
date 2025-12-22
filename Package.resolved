@@ -1,5 +1,5 @@
 {
-  "originHash" : "6ce3125a9a013f18071d3b8b40d6e1e853d53b70047eb35b03466045801907f9",
+  "originHash" : "6d6b2c77b16df2f5b66daa514eecd101cad091ee7cdc882426a5534b1ec26a81",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -11,39 +11,12 @@
       }
     },
     {
-      "identity" : "genericcollectionviewkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/engingulek/GenericCollectionViewKit",
-      "state" : {
-        "revision" : "a41d0a2baf33d22100708590eea147a6a3f7464d",
-        "version" : "0.0.7"
-      }
-    },
-    {
-      "identity" : "hpdependencykit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/engingulek/HPDependencyKit",
-      "state" : {
-        "revision" : "c9305c28ff55ad6eb257fbcfd014f49be7d8f47a",
-        "version" : "1.0.0"
-      }
-    },
-    {
-      "identity" : "ictmdbmodularprotocols",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/engingulek/ICTMDBModularProtocols",
-      "state" : {
-        "revision" : "878d1b233f54741b0e787ce273e2a75171255f36",
-        "version" : "0.0.1"
-      }
-    },
-    {
       "identity" : "ictmdbnetworkmanagerkit",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/engingulek/ICTMDBNetworkManagerKit",
       "state" : {
-        "revision" : "c39931f4fb42ee553ff38af589ba1e50b36aa121",
-        "version" : "0.0.5"
+        "branch" : "feature/create-modular-network-layer",
+        "revision" : "d0fa0d42e1d87ab25c64a04b2c8e4d075bfe3bb3"
       }
     },
     {
@@ -62,24 +35,6 @@
       "state" : {
         "revision" : "d30a5fad881137e2267f96a8e3fc35c58999bb94",
         "version" : "8.6.2"
-      }
-    },
-    {
-      "identity" : "snapkit",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/SnapKit/SnapKit.git",
-      "state" : {
-        "revision" : "2842e6e84e82eb9a8dac0100ca90d9444b0307f4",
-        "version" : "5.7.1"
-      }
-    },
-    {
-      "identity" : "swinject",
-      "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Swinject/Swinject.git",
-      "state" : {
-        "revision" : "b685b549fe4d8ae265fc7a2f27d0789720425d69",
-        "version" : "2.10.0"
       }
     }
   ],
