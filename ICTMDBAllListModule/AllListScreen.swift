@@ -6,9 +6,7 @@
 //
 
 import SwiftUI
-import Kingfisher
-import SwiftUI
-import Kingfisher
+import ICTMDBViewKit
 
 struct AllListScreen<VM: AllListViewModelProtocol>: View {
     @StateObject var viewModel: VM
@@ -19,74 +17,32 @@ struct AllListScreen<VM: AllListViewModelProtocol>: View {
     ]
     
     var body: some View {
-      
-        ZStack(alignment: .bottom) { // 1. Hizalamayı bottom yapıyoruz
-            ScrollView {
-                LazyVStack(spacing: 16) {
-                    // Header - Sayaç Kısmı
-                    HStack {
-                        Text("TvShowCount \(viewModel.tvShows.count)")
-                            .font(.title2)
-                            .fontWeight(.semibold)
-                        Spacer()
-                    }
-                    .padding(.horizontal)
-                    
-                    // Grid Yapısı
-                    LazyVGrid(columns: columns, spacing: 20) {
-                        ForEach(viewModel.tvShows, id: \.id) { item in
-                            VStack(spacing: 0) {
-                                // ... Mevcut Kart Tasarımın ...
-                                ZStack(alignment: .topTrailing) {
-                                    KFImage(URL(string: item.mainPoster))
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(height: 220)
-                                        .frame(maxWidth: .infinity)
-                                        .clipped()
-                                        .overlay(alignment: .topTrailing) {
-                                            Text(item.flag)
-                                                .padding([.top, .trailing], 8)
-                                        }
-                                        .overlay(alignment: .bottomTrailing) {
-                                            RatingView(score: item.rating, type: .airingToday)
-                                                .padding([.bottom, .trailing], 8)
-                                        }
-                                    
-                                    Text(item.flag)
-                                        .font(.system(size: 18))
-                                        .cornerRadius(6)
-                                        .padding([.top, .trailing], 8)
-                                }
-                                
-                                Text(item.title)
-                                    .font(.system(size: 16, weight: .bold))
-                                    .padding(.vertical, 12)
-                                    .frame(height: 60)
+        if viewModel.isLoading {
+            ProgressView()
+                .font(.largeTitle)
+                .foregroundStyle(.black)
+        }else{
+            if viewModel.isError.state {
+                AppText(text: viewModel.isError.message, style: .error)
+            }else{
+                ZStack(alignment: .bottom) {
+                    ScrollView {
+                        LazyVGrid(columns: columns, spacing: 20) {
+                            ForEach(viewModel.tvShows, id: \.id) { item in
+                                TvShowItem(item: item)
                             }
-                            .background(Color(.secondarySystemGroupedBackground))
-                            .cornerRadius(12)
-                            .shadow(color: Color.black.opacity(0.08), radius: 5, x: 0, y: 2)
                         }
+                        .padding(.horizontal)
+                        Color.clear.frame(height: 80)
                     }
-                    .padding(.horizontal)
-                    
-                    // ScrollView'un en altında boşluk bırakıyoruz ki
-                    // sabit duran view son elemanı kapatmasın
-                    Color.clear.frame(height: 80)
+                    PaginationView(
+                        currentPage: viewModel.currentPage,
+                        totalPages: viewModel.totalPage,
+                        prevAction: viewModel.prevPage,
+                        nextAction: viewModel.nextPage)
                 }
             }
-
-            PaginationView(
-                currentPage: viewModel.currentPage,
-                totalPages: viewModel.totalPage,
-                prevAction: viewModel.prevPage, nextAction: viewModel.nextPage)
-           
-            
-           
         }
-          
-        
     }
 }
 

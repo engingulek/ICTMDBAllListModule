@@ -18,7 +18,7 @@ let package = Package(
         
         
         .package(url: "https://github.com/engingulek/ICTMDBNetworkManagerKit", branch: "feature/create-modular-network-layer"),
-        .package(url: "https://github.com/engingulek/ICTMDBViewKit", from: "0.0.2"),
+        .package(url: "https://github.com/engingulek/ICTMDBViewKit", branch: "version/swiftui"),
     ],
     targets: [
         .target(

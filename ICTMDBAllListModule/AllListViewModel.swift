@@ -6,10 +6,11 @@
 //
 
 import Foundation
-
+import ICTMDBViewKit
 protocol AllListViewModelProtocol  : ObservableObject{
     var tvShows : [TVShowPresentation] {get}
     var isLoading:Bool {get}
+    var isError: (state:Bool,message:String) {get}
     func loadData(type:ListType)
     var currentPage:Int {get}
         var totalPage:Int {get}
@@ -26,6 +27,7 @@ final class AllListViewModel : AllListViewModelProtocol {
     private let service : AllListServiceProtocol
     @Published var currentPage:Int = 1
     @Published var totalPage:Int = 1
+    @Published var isError: (state: Bool, message: String) = (false, "")
     private var listType:ListType? = nil
     
     init( service: AllListServiceProtocol) {
@@ -36,6 +38,7 @@ final class AllListViewModel : AllListViewModelProtocol {
         listType = type
         isLoading = true
         service.loadTvShows(type:type , page: currentPage) { result in
+            
             switch result {
             case .success(let data):
                 let list = data.results.map {
@@ -44,24 +47,22 @@ final class AllListViewModel : AllListViewModelProtocol {
                     }
 
                 self.tvShowsWithPage.append((page: data.page, list: list))
-                
-              
                 self.tvShows = list
                 self.totalPage = data.totalPages
                 self.isLoading = false
-            case .failure(let failure):
-                print(failure.localizedDescription)
+                self.isError = (state:false,message:"")
+            case .failure:
                 self.isLoading = false
+                self.isError = (state:true,message:LocalizableUI.somethingWentWrong.localized)
             }
         }
     }
     
- 
     func prevPage() {
-        guard let listType else {return}
         if currentPage >= 2 {
             currentPage -= 1
-           self.tvShows = self.tvShowsWithPage.first(where: { $0.page == self.currentPage })?.list ?? []
+           self.tvShows = self.tvShowsWithPage
+                .first(where: { $0.page == self.currentPage })?.list ?? []
         }
     }
     
@@ -70,9 +71,7 @@ final class AllListViewModel : AllListViewModelProtocol {
         if currentPage <= totalPage {
             currentPage += 1
             loadData(type:listType )
-        
         }
     }
-    
 }
 
