@@ -14,7 +14,6 @@ struct TvShowItem: View {
             ZStack(alignment: .topTrailing) {
                 AppImage(
                     source: .remote(url: item.mainPoster, type: .main))
-                .aspectRatio(contentMode: .fill)
                 .frame(height: 220)
                 .frame(maxWidth: .infinity)
                 .clipped()
