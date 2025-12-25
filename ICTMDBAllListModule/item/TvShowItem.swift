@@ -20,7 +20,11 @@ struct TvShowItem: View {
                 
                 AppText(text: item.flag, style: .cardSubTitle)
                     .padding([.top, .trailing], 5)
-            }
+            }.overlay(
+                RatingView(score: item.rating, type: .airingToday)
+                    .padding([.bottom, .trailing], 8),
+                alignment: .bottomTrailing
+            )
             AppText(text: item.title, style: .cardTitle)
                 .padding()
             

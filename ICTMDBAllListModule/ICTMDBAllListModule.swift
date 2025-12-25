@@ -9,15 +9,14 @@ import Foundation
 import SwiftUI
 
 import ICTMDBNetworkManagerKit
+import ICTMDBModularProtocols
 
-
-public class ICTMDBAllListModule  {
- 
+public class ICTMDBAllListModule : @MainActor AllListModuleProtocol  {
     public init() { }
-    
-    @MainActor static func createModule(type:ListType) -> AnyView  {
+    @MainActor public func createAllListModule(type: ICTMDBModularProtocols.AllListType) -> AnyView {
         let viewModel = AllListViewModel(service: AllListService(networkManager: NetworkManager()))
-        viewModel.loadData(type: type)
+        let listType:ListType = type == .popular ? .popular : .airingToday
+        viewModel.loadData(type: listType)
         let view = AllListScreen(viewModel: viewModel)
         return AnyView(view)
     }

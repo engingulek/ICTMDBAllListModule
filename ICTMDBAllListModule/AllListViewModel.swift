@@ -13,9 +13,11 @@ protocol AllListViewModelProtocol  : ObservableObject{
     var isError: (state:Bool,message:String) {get}
     func loadData(type:ListType)
     var currentPage:Int {get}
-        var totalPage:Int {get}
+    var totalPage:Int {get}
     func prevPage()
     func nextPage()
+    var toDetail:((Int?) -> Void)?  { get set }
+    func onTappedItem(id:Int?)
 }
 
 
@@ -28,6 +30,7 @@ final class AllListViewModel : AllListViewModelProtocol {
     @Published var currentPage:Int = 1
     @Published var totalPage:Int = 1
     @Published var isError: (state: Bool, message: String) = (false, "")
+    var toDetail:((Int?)->Void)?
     private var listType:ListType? = nil
     
     init( service: AllListServiceProtocol) {
@@ -72,6 +75,10 @@ final class AllListViewModel : AllListViewModelProtocol {
             currentPage += 1
             loadData(type:listType )
         }
+    }
+    
+    func onTappedItem(id: Int?) {
+        toDetail?(id)
     }
 }
 
