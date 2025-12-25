@@ -1,5 +1,5 @@
 {
-  "originHash" : "803b0801f7c62d389716c58b6477351d90f5cf161f6183a7d2855c66802c04dc",
+  "originHash" : "e090e1e667934b2cbf336647c7b44ae790715029ddd0e43784dbeb8fcf62a57d",
   "pins" : [
     {
       "identity" : "alamofire",
@@ -34,7 +34,7 @@
       "location" : "https://github.com/engingulek/ICTMDBNavigationManagerSwiftUI",
       "state" : {
         "branch" : "master",
-        "revision" : "cc32886e819bbad716917aa7272ec6baf2241a97"
+        "revision" : "8a9772652b79c236512c3d23cee8288b2a307fa1"
       }
     },
     {
