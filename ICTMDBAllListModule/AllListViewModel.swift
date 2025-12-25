@@ -22,7 +22,7 @@ protocol AllListViewModelProtocol  : ObservableObject{
 
 
 final class AllListViewModel : AllListViewModelProtocol {
-  
+    
     @Published var tvShows : [TVShowPresentation]  = []
     private var tvShowsWithPage:  [(page:Int,list:[TVShowPresentation])] = []
     @Published var isLoading: Bool = false
@@ -40,23 +40,23 @@ final class AllListViewModel : AllListViewModelProtocol {
     func loadData(type:ListType) {
         listType = type
         isLoading = true
-        service.loadTvShows(type:type , page: currentPage) { result in
-            
+        service.loadTvShows(type:type , page: currentPage) {[weak self] result in
+            guard let self = self else { return }
             switch result {
             case .success(let data):
                 let list = data.results.map {
                     TVShowPresentation(tvShow: $0)}.sorted {
                         type == .popular ? $0.rating > $1.rating : true
                     }
-
-                self.tvShowsWithPage.append((page: data.page, list: list))
-                self.tvShows = list
-                self.totalPage = data.totalPages
-                self.isLoading = false
-                self.isError = (state:false,message:"")
+                
+                tvShowsWithPage.append((page: data.page, list: list))
+                tvShows = list
+                totalPage = data.totalPages
+                isLoading = false
+                isError = (state:false,message:"")
             case .failure:
-                self.isLoading = false
-                self.isError = (state:true,message:LocalizableUI.somethingWentWrong.localized)
+                isLoading = false
+                isError = (state:true,message:LocalizableUI.somethingWentWrong.localized)
             }
         }
     }
@@ -64,8 +64,8 @@ final class AllListViewModel : AllListViewModelProtocol {
     func prevPage() {
         if currentPage >= 2 {
             currentPage -= 1
-           self.tvShows = self.tvShowsWithPage
-                .first(where: { $0.page == self.currentPage })?.list ?? []
+            tvShows = tvShowsWithPage
+                .first(where: { $0.page == currentPage })?.list ?? []
         }
     }
     
