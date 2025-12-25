@@ -44,7 +44,8 @@ struct AllListScreen<VM: AllListViewModelProtocol>: View {
                         prevAction: viewModel.prevPage,
                         nextAction: viewModel.nextPage)
                 }.onAppear{
-                    viewModel.toDetail = { id in
+                    viewModel.toDetail = {[weak navigation] id in
+                        guard let navigation else {return}
                         navigation.push(.detail(id))
                     }
                 }
