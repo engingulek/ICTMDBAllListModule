@@ -37,6 +37,10 @@ final class AllListViewModel : AllListViewModelProtocol {
         self.service = service
     }
     
+    deinit {
+        print("DEBUG: AllListViewModel removed ✅")
+    }
+    
     func loadData(type:ListType) {
         listType = type
         isLoading = true
