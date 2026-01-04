@@ -28,9 +28,16 @@ final class AllListInteractor : PresenterToInteractorAllListProtocol,@unchecked 
         
         do {
             let result = try await network.execute(request)
-           await presenter?.sendData(result)
+            await MainActor.run {
+                presenter?.sendData(result)
+            }
+    
         }catch{
-           await presenter?.sendError()
+           await MainActor.run {
+               presenter?.sendError()
+           }
+            
+          
         }
     }
 }

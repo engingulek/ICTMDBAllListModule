@@ -32,26 +32,28 @@ final class AllListPresenter {
         self.router = router
     }
     
-    @MainActor
-    private func fetchTvShows(at type: ListType) {
-        Task {@MainActor in
+    
+    private func fetchTvShows(at type: ListType) async {
+        
             await interactor.loadTvShows(type: type, page: currentPage)
-        }
+        
     }
 }
 
 //MARK: AllListPresenter : ViewToPresenterAllListProtocol
-extension AllListPresenter : @MainActor ViewToPresenterAllListProtocol {
+@MainActor
+extension AllListPresenter :  @MainActor ViewToPresenterAllListProtocol {
    
     func viewDidLoad() {
         view?.setBackColorAble(color: "backColor")
         view?.setNavigationTitle(title: "All List")
     }
     
-    @MainActor func getAllList(at type: ListType) {
+   func getAllList(at type: ListType) {
         listtype = type
-        fetchTvShows(at: type)
-        
+       Task{
+          await fetchTvShows(at: type)
+       }
     }
     
     func numberOfRowsInSection(in section: Int) -> Int {
@@ -116,14 +118,14 @@ extension AllListPresenter : @MainActor ViewToPresenterAllListProtocol {
  
     
     
-    @MainActor func scrollViewDidScroll(endOfPage: Bool) {
+     func scrollViewDidScroll(endOfPage: Bool) {
         guard let listtype = listtype else {return}
         if endOfPage {
             if currentPage <= totalPage {
                 currentPage += 1
-                
-                fetchTvShows(at: listtype)
-                
+                Task{
+                  await  fetchTvShows(at: listtype)
+                }
                 view?.relaodCollectionView()
             }
         }
